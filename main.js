@@ -11,6 +11,7 @@ const resultAttempts = document.querySelector('.result-attempts')
 const winOrLose = document.querySelector('.win-or-lose')
 const restart = document.querySelector('.restart')
 const resultTime = document.querySelector('.result-time')
+const errorWords = document.querySelector('.error')
 
 const widthNoword = noWord.offsetWidth
 let words = []
@@ -129,13 +130,14 @@ function enter(key) {
 
 async function STARTGAME() {
   try {
-    const response = await fetch('words.json')
+    const response = await fetch('ords.json')
     words = await response.json()
     hiddenWord = words[randomNumber]
     console.log('Слова загружены -', words.length)
   } catch (error) {
+    hiddenWord = 'ERROR'
     console.error('Ошибка загрузки слов:', error)
-    hiddenWord = 'ОШИБКА'
+    errorWords.style.display = 'flex'
   }
   
   
