@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=C#E9D050hiron+GoRound+TC:wght@200..900&display=swap');
+
+:root {
+	--error: #000;
+	--black: #0D0D0D;
+	--transparent-black: #171717CF;
+	--light-gray: #444;
+	--grey: #222;
+	--white: #FFF;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html {
+	touch-action: none;
+}
+body {
+	font-family: "Chiron GoRound TC", sans-serif;
+	line-height: 1;
+	background-color: var(--black);
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	padding: 0 0 20px 0;
+	touch-action: none;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+input {
+	font-family: "Chiron GoRound TC", sans-serif;
+}
+h1 {
+	color: var(--white);
+	font-size: 17px;
+	font-weight: 900;
+	display: flex;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 0 0 0;
+}
+
+
+main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.game {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.keyboard {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	width: 347px;
+	margin: 0 auto;
+}
+
+.rows {
+	display: flex;
+	gap: 5px;
+}
+
+.keyboard div {
+  background-color: var(--light-gray);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 45px;
+  flex: 1;
+  border: 1px solid var(--light-gray);
+  border-radius: 5px;
+  padding: 0 5px;
+  font-size: 14px;
+  font-weight: 500;
+  user-select: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.row-3 div:first-child {
+  flex: 2;
+  font-size: 12px;
+}
+
+.attempts {
+	display: flex;
+	width: 360px;
+	gap: 5px;
+	padding: 0 5px;
+	box-sizing: border-box;
+}
+
+.attempts div {
+	border: 2px solid var(--grey);
+	display: flex;
+	width: 100%;
+	box-sizing: border-box;
+	color: var(--white);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 35px;
+	font-weight: 600;
+	user-select: none;
+}
+
+.no-word {
+	position: absolute;
+	width: 100%;
+	box-sizing: border-box;
+	color: var(--white);
+	padding: 15px 10px;
+	background-color: var(--error);
+	line-height: 1.5;
+	transform: translateY(-100px);
+	transition: .5s cubic-bezier(0.86, 0, 0.07, 1);
+	font-size: 16px;
+}
+
+.end-game {
+	position: absolute;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	background-color: var(--transparent-black);
+}
+
+.end-game section {
+	width: 280px;
+	padding: 20px 10px 10px 10px;
+	background-color: var(--black);
+	border-radius: 15px;
+	color: var(--white);
+	border: 1px solid var(--grey);
+}
+
+.win-or-lose {
+	text-align: center;
+	font-size: 17px;
+	font-weight: 800;
+	padding-bottom: 30px;
+}
+
+td {
+	padding: 5px 20px 0 0;
+	font-size: 15px;
+	font-weight: 500;
+}
+
+.restart {
+	margin-top: 30px;
+	padding: 15px;
+	text-align: center;
+	background-color: var(--grey);
+	font-size: 17px;
+	font-weight: 800;
+	border-radius: 7px;
+}
+
+@media(min-width: 700px){
+body {
+	font-family: "Chiron GoRound TC", sans-serif;
+	line-height: 1;
+	background-color: var(--black);
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	padding: 0 0 30px 0;
+	touch-action: none;
+}
+h1 {
+	color: var(--white);
+	font-size: 25.5px;
+	font-weight: 900;
+	display: flex;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 30px 0 0 0;
+}
+
+
+main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.game {
+	display: flex;
+	flex-direction: column;
+	gap: 7.5px;
+}
+
+.keyboard {
+	display: flex;
+	flex-direction: column;
+	gap: 7.5px;
+	width: 520.5px;
+	margin: 0 auto;
+}
+
+.rows {
+	display: flex;
+	gap: 7.5px;
+}
+
+.keyboard div {
+  background-color: var(--grey);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 67.5px;
+  flex: 1;
+  border: 1.5px solid var(--grey);
+  border-radius: 7.5px;
+  padding: 0 7.5px;
+  font-size: 21px;
+  font-weight: 500;
+  user-select: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.keyboard div.yellow {
+	background-color: #DCD359;
+	border-color: #DCD359;
+}
+
+.keyboard div.green {
+	background-color: #86BA56;
+	border-color: #86BA56;
+}
+
+.row-3 div:first-child {
+  flex: 2;
+  font-size: 18px;
+}
+
+.attempts {
+	display: flex;
+	width: 540px;
+	gap: 7.5px;
+	padding: 0 7.5px;
+	box-sizing: border-box;
+}
+
+.attempts div {
+	border: 3px solid var(--grey);
+	display: flex;
+	width: 100%;
+	box-sizing: border-box;
+	color: var(--white);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 52.5px;
+	font-weight: 600;
+	user-select: none;
+}
+
+.no-word {
+	position: absolute;
+	width: 100%;
+	box-sizing: border-box;
+	text-align: center;
+	color: var(--white);
+	padding: 22.5px 15px;
+	background-color: var(--error);
+	line-height: 1.5;
+	transform: translateY(-150px);
+	transition: .5s cubic-bezier(0.86, 0, 0.07, 1);
+	font-size: 24px;
+}
+	
+.end-game {
+	position: absolute;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	background-color: var(--transparent-black);
+}
+
+.end-game section {
+	width: 420px;
+	padding: 30px 15px 15px 15px;
+	background-color: var(--black);
+	border-radius: 22.5px;
+	color: var(--white);
+	border: 1.5px solid var(--grey);
+}
+
+.win-or-lose {
+	text-align: center;
+	font-size: 25.5px;
+	font-weight: 800;
+	padding-bottom: 45px;
+}
+
+td {
+	padding: 7.5px 30px 0 0;
+	font-size: 22.5px;
+	font-weight: 500;
+}
+
+.restart {
+	margin-top: 45px;
+	padding: 22.5px;
+	text-align: center;
+	background-color: var(--grey);
+	font-size: 25.5px;
+	font-weight: 800;
+	border-radius: 10.5px;
+}}
+
+@keyframes enter {
+  0% {
+  	transform: rotate(0deg);
+  } 100% {
+  	transform: rotate(360deg);
+  }
+}
+  
