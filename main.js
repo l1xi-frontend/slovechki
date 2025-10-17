@@ -130,7 +130,7 @@ function enter(key) {
 
 async function STARTGAME() {
   try {
-    const response = await fetch('ords.json')
+    const response = await fetch('words.json')
     words = await response.json()
     hiddenWord = words[randomNumber]
     console.log('Слова загружены -', words.length)
